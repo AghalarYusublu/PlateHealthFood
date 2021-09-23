@@ -1,0 +1,27 @@
+{% extends "admin/base.html" %} {% block navbar %}
+<div class="navbar-wrapper">
+    <a class="navbar-brand" href="javascript:void(0)">Social Links Update</a>
+</div>
+{% endblock %} {% block content %}
+
+
+<form action="{{url_for('admin_social_link_update',id=link.id)}}" method="POST">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="form-group form-group bmd-form-group is-filled">
+                {{form.s_icon(class="form-control my-3" ,placeholder="Icon",value=link.s_icon)}}
+
+            </div>
+            <div class="form-group form-group bmd-form-group is-filled">
+                {{form.s_icon_url(class="form-control my-3", placeholder="Icon Url",value=link.s_icon_url)}}
+            </div>
+            {{form.submit(class="btn btn-primary mt-3", value="Add")}}
+
+
+
+        </div>
+    </div>
+</form>
+
+
+{% endblock %}
